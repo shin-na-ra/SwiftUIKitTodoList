@@ -104,7 +104,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmE-Sh-DxL">
-                                <rect key="frame" x="150" y="530" width="93" height="35"/>
+                                <rect key="frame" x="125" y="530" width="144" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="추가"/>
@@ -132,7 +132,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Uby-ia-6aV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="square.and.arrow.up.circle" catalog="system" id="7f0-Rd-C0o">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7f0-Rd-C0o">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -170,7 +170,7 @@
                             <outlet property="delegate" destination="vSY-b9-xCf" id="wL0-Ta-TbA"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" tag="1" title="MySQL" image="mysql" landscapeImage="mysql" largeContentSizeImage="mysql" selectedImage="mysql" id="h0B-zV-6Y3"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="MySQL" image="mysql" id="h0B-zV-6Y3"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5NK-nk-WfN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -199,7 +199,7 @@
                             <outlet property="delegate" destination="O3B-FE-kUg" id="1jM-DU-Ers"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" tag="2" title="Firebase" image="firebase" largeContentSizeImage="firebase" selectedImage="firebase" id="WS4-qM-Kx3"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Firebase" image="firebase" id="WS4-qM-Kx3"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wif-k9-mz9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -209,7 +209,7 @@
         <scene sceneID="Tbd-BI-ZTI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xDz-Bi-ScX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="SQLite" image="sqlite" landscapeImage="sqlite" largeContentSizeImage="sqlite" selectedImage="sqlite" id="86B-ri-2Sb"/>
+                    <tabBarItem key="tabBarItem" title="SQLite" image="sqlite" id="86B-ri-2Sb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="klC-Ch-vYm">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -236,10 +236,6 @@
                                 <rect key="frame" x="124" y="152" width="144" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EAq-sz-ebb">
-                                <rect key="frame" x="86" y="288" width="220" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="할 일 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bas-XC-WGc">
                                 <rect key="frame" x="61" y="516" width="68" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -254,13 +250,24 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIf-ML-3vB">
-                                <rect key="frame" x="150" y="589" width="93" height="35"/>
+                                <rect key="frame" x="124" y="589" width="144" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="수정"/>
                                 <connections>
                                     <action selector="btnAction:" destination="Xd9-f3-MxG" eventType="touchUpInside" id="UPU-EK-SKg"/>
                                     <action selector="btnAdd:" destination="QCK-GL-6gH" eventType="touchUpInside" id="94O-hH-0A0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEg-uN-ckT">
+                                <rect key="frame" x="124" y="339" width="144" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="이미지 불러오기">
+                                    <color key="baseBackgroundColor" red="0.36852641303871048" green="0.59299498694633213" blue="0.76859849691390991" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="showImage:" destination="Xd9-f3-MxG" eventType="touchUpInside" id="5DH-9Z-Q1W"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -270,20 +277,18 @@
                     <navigationItem key="navigationItem" title="TodoList 수정" id="PPm-qb-ord"/>
                     <connections>
                         <outlet property="imgView" destination="7Bn-Tt-zS1" id="hM1-zZ-Qbj"/>
-                        <outlet property="pickerView" destination="EAq-sz-ebb" id="UEJ-8v-Sf2"/>
                         <outlet property="tfText" destination="Q3M-6s-bVe" id="RiY-fD-z1b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLr-8h-BPf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3021" y="-1341"/>
+            <point key="canvasLocation" x="3020.6106870229005" y="-1341.549295774648"/>
         </scene>
     </scenes>
     <resources>
         <image name="firebase" width="32" height="32"/>
         <image name="mysql" width="32" height="32"/>
         <image name="sqlite" width="32" height="32"/>
-        <image name="square.and.arrow.up.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

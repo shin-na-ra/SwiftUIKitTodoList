@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 class DetailSQLiteViewController: UIViewController {
 
@@ -30,8 +31,6 @@ class DetailSQLiteViewController: UIViewController {
         
         imgView.image = imgValue
         tfText.text = textValue
-        pickerView.dataSource = self
-        pickerView.delegate = self
 
     }
     
@@ -48,7 +47,7 @@ class DetailSQLiteViewController: UIViewController {
         guard let image = imgView.image else {return }
         
         
-        let result = queryModel.sqlLiteInsertDB(todo: text, insertdate: formattedDate, compledate: "", status: 0, image: image)
+        let result = queryModel.sqlLiteUpdateDB(todo: text, image: image, id: idValue)
         
         if result {
             showAlert("알림", "수정되었습니다.", "확인")
@@ -56,6 +55,28 @@ class DetailSQLiteViewController: UIViewController {
             showAlert("에러", "문제가 발생했습니다.", "확인")
         }
     }
+    
+    
+    @IBAction func showImage(_ sender: UIButton) {
+        let phoneAlert = UIAlertController(title: "이미지 가져오기", message: "갤러리에서 이미지를 가져옵니다.", preferredStyle: .actionSheet)
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: {ACTION in
+            var configuration = PHPickerConfiguration()
+            configuration.selectionLimit = 1
+            configuration.filter = .any(of: [.images])
+            
+            let picker = PHPickerViewController(configuration: configuration)
+            picker.delegate = self
+            self.present(picker, animated: true, completion: nil)
+        })
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        
+        phoneAlert.addAction(okAction)
+        phoneAlert.addAction(cancelAction)
+        
+        present(phoneAlert, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -80,24 +101,19 @@ class DetailSQLiteViewController: UIViewController {
 }
 
 
-extension DetailSQLiteViewController: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        imageArr.count
-    }
-}
-
-extension DetailSQLiteViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let imageView = UIImageView(image: imageArray[row])
-        imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        return imageView
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        imgView.image = imageArray[row]
+extension DetailSQLiteViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true)
+        
+        let itemProvider = results.first?.itemProvider
+        
+        if let itemProvider = itemProvider,
+           itemProvider.canLoadObject(ofClass: UIImage.self) {
+            itemProvider.loadObject(ofClass: UIImage.self, completionHandler: { (image, error) in
+                DispatchQueue.main.async {
+                    self.imgView.image = image as? UIImage
+                }
+            })
+        }
     }
 }
