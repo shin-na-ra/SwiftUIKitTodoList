@@ -20,16 +20,48 @@ class SQLiteTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.leftBarButtonItem = self.editButtonItem
-        self.navigationItem.leftBarButtonItem?.title = "편집"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         readValues()
-        if let title = self.navigationItem.leftBarButtonItem?.title, title == "edit" {
-           self.navigationItem.leftBarButtonItem?.title = "편집"
-        }
+        let longProcessGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
+        tvListView.addGestureRecognizer(longProcessGesture)
     }
 
+    @objc func handleLongPress(_ gestureReconizer: UILongPressGestureRecognizer) {
+        if gestureReconizer.state == .began {
+            let point = gestureReconizer.location(in: tableView)
+            if let indexPath = tableView.indexPathForRow(at: point ) {
+                
+                let indexValue = indexPath[1]
+                let queryModel = SQLiteTodoList()
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                let currentDate = Date()
+                let formattedDate = dateFormatter.string(from: currentDate)
+                
+                let textAlert = UIAlertController(title: "TodoList", message: "해당 항목을 작업완료로 설정 하시겠습니까?", preferredStyle: .alert)
+                
+                //UIAlertAction 설정 - handler에서 Closure 사용
+                let cancelAction = UIAlertAction(title: "취소", style: .default)
+                let doneAction = UIAlertAction(title: "완료", style: .default, handler: {ACTION in
+                    queryModel.sqlLiteUpdateStatueDB(compledate: formattedDate, status: 1, id: self.dataArray[indexValue].id)
+                    self.readValues()
+                })
+                
+                let IncomAction = UIAlertAction(title: "미완료", style: .default)
+                
+                //UIAlertController에 UIAlertAction 추가
+                textAlert.addAction(cancelAction)
+                textAlert.addAction(doneAction)
+                textAlert.addAction(IncomAction)
+                
+                present(textAlert, animated: true) //화면띄우기
+            }
+        }
+    }
+    
     func readValues() {
         let sqlLiteDB = SQLiteTodoList()
         dataArray.removeAll()
@@ -54,6 +86,14 @@ class SQLiteTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! SQLiteTableViewCell
+        
+        if dataArray[indexPath.row].status == 1 {
+            cell.isUserInteractionEnabled = false
+            cell.backgroundColor = UIColor.lightGray
+        } else {
+            cell.isUserInteractionEnabled = true
+            cell.backgroundColor = UIColor.white
+        }
         
         cell.lblText.text = dataArray[indexPath.row].todoList
         cell.imgView.image = dataArray[indexPath.row].image
@@ -107,12 +147,27 @@ class SQLiteTableViewController: UITableViewController {
 
         let itemToMove = dataArray[fromIndexPath.row]
         
+        let moveValueId = dataArray.remove(at: fromIndexPath.row).id
+        
         dataArray.remove(at: fromIndexPath.row)
         
         dataArray.insert(itemToMove, at: to.row)
         
-        print("fromindexPath : ",fromIndexPath.row)
-        print("to : ",to.row)
+        print("이동한 위치 : ",to.row+1)
+        print("움직이는 id값 : ",moveValueId)
+        
+//        # 9번 : 0 -> 4
+//        # seq <= 4
+//        # update seq seq-1
+        
+        let queryModel = SQLiteTodoList()
+        let result =  queryModel.sqlLiteUpdateSeq(idValue: moveValueId, moveSeq: (to.row) + 1)
+        if result {
+            print("성공")
+        } else {
+            print("땡!")
+        }
+        
     }
 
     /*

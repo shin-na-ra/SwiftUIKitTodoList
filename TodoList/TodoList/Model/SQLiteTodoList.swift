@@ -143,4 +143,72 @@ class SQLiteTodoList {
             return false
         }
     }
+    
+    
+//    UPDATE todo
+//    SET seq = seq - 1
+//    WHERE seq <= 4 AND id != 9;
+    
+    func sqlLiteUpdateSeq(idValue: Int, moveSeq: Int) -> Bool{
+        var stmt: OpaquePointer?
+        let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
+        
+        let queryString = "update todo set seq = ? where id = ?"
+        
+        if sqlite3_prepare(db, queryString, -1, &stmt, nil) == SQLITE_OK {
+            sqlite3_bind_int(stmt, 1, Int32(moveSeq))
+            sqlite3_bind_int(stmt, 2, Int32(idValue))
+            
+            if sqlite3_step(stmt) != SQLITE_DONE {
+                sqlite3_finalize(stmt)
+                return false
+            }
+            print("실행1")
+            sqlite3_finalize(stmt)
+        } else {
+            return false
+        }
+        
+        let queryString2 = "update todo set seq = seq - 1 where seq <= ? and id != ?"
+        if sqlite3_prepare(db, queryString2, -1, &stmt, nil) == SQLITE_OK {
+            sqlite3_bind_int(stmt, 1, Int32(moveSeq))
+            sqlite3_bind_int(stmt, 2, Int32(idValue))
+            
+            if sqlite3_step(stmt) != SQLITE_DONE {
+                sqlite3_finalize(stmt)
+                return true
+            }
+            sqlite3_finalize(stmt)
+            print("실행2")
+        } else {
+            return false
+        }
+        print("실행3")
+        
+        return true
+    }
+    
+    func sqlLiteUpdateStatueDB(compledate: String, status: Int, id: Int) {
+        var stmt: OpaquePointer?
+        let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
+        
+        print(compledate)
+        print(status)
+        print(id)
+        
+        let queryString = "update todo set compledate = ?, status = ? where id = ?"
+        
+        sqlite3_prepare(db, queryString, -1, &stmt, nil)
+        sqlite3_bind_text(stmt, 1, compledate, -1, SQLITE_TRANSIENT)
+        sqlite3_bind_int(stmt, 2, Int32(status))
+        sqlite3_bind_int(stmt, 3, Int32(id))
+        
+        
+        if sqlite3_step(stmt) == SQLITE_DONE {
+            print("성공!")
+        } else {
+            print("실패")
+        }
+    }
+    
 }
