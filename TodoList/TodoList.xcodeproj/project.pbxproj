@@ -20,6 +20,17 @@
 		5418F3EE2BF5C68D00A27A6A /* AddSQLiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3ED2BF5C68D00A27A6A /* AddSQLiteViewController.swift */; };
 		5418F3F02BF603FD00A27A6A /* SQLiteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3EF2BF603FD00A27A6A /* SQLiteTableViewCell.swift */; };
 		5418F3F22BF7119000A27A6A /* DetailSQLiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3F12BF7119000A27A6A /* DetailSQLiteViewController.swift */; };
+		5418F3F92BF8A57000A27A6A /* FireTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3F82BF8A57000A27A6A /* FireTableViewController.swift */; };
+		5418F3FB2BF8A9E200A27A6A /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3FA2BF8A9E200A27A6A /* FirebaseModel.swift */; };
+		5418F3FD2BF8AA0D00A27A6A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3FC2BF8AA0D00A27A6A /* Message.swift */; };
+		5418F3FF2BF8AB1C00A27A6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5418F3FE2BF8AB1C00A27A6A /* GoogleService-Info.plist */; };
+		5418F4022BF8AB6600A27A6A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5418F4012BF8AB6600A27A6A /* FirebaseAuth */; };
+		5418F4042BF8AB6600A27A6A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5418F4032BF8AB6600A27A6A /* FirebaseFirestore */; };
+		5418F4062BF8AB6600A27A6A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5418F4052BF8AB6600A27A6A /* FirebaseStorage */; };
+		5418F40A2BF8ACE300A27A6A /* QueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F4092BF8ACE300A27A6A /* QueryModel.swift */; };
+		5418F40C2BF8AF4500A27A6A /* FireTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F40B2BF8AF4500A27A6A /* FireTableViewCell.swift */; };
+		5418F40E2BF8B40100A27A6A /* insertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F40D2BF8B40100A27A6A /* insertModel.swift */; };
+		5418F4102BF8B67000A27A6A /* FireAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F40F2BF8B67000A27A6A /* FireAddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +49,14 @@
 		5418F3ED2BF5C68D00A27A6A /* AddSQLiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSQLiteViewController.swift; sourceTree = "<group>"; };
 		5418F3EF2BF603FD00A27A6A /* SQLiteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteTableViewCell.swift; sourceTree = "<group>"; };
 		5418F3F12BF7119000A27A6A /* DetailSQLiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSQLiteViewController.swift; sourceTree = "<group>"; };
+		5418F3F82BF8A57000A27A6A /* FireTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTableViewController.swift; sourceTree = "<group>"; };
+		5418F3FA2BF8A9E200A27A6A /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
+		5418F3FC2BF8AA0D00A27A6A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		5418F3FE2BF8AB1C00A27A6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5418F4092BF8ACE300A27A6A /* QueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryModel.swift; sourceTree = "<group>"; };
+		5418F40B2BF8AF4500A27A6A /* FireTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTableViewCell.swift; sourceTree = "<group>"; };
+		5418F40D2BF8B40100A27A6A /* insertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = insertModel.swift; sourceTree = "<group>"; };
+		5418F40F2BF8B67000A27A6A /* FireAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +64,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5418F4022BF8AB6600A27A6A /* FirebaseAuth in Frameworks */,
+				5418F4042BF8AB6600A27A6A /* FirebaseFirestore in Frameworks */,
+				5418F4062BF8AB6600A27A6A /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +100,7 @@
 				5418F3CF2BF5866800A27A6A /* Main.storyboard */,
 				5418F3D22BF5866900A27A6A /* Assets.xcassets */,
 				5418F3D42BF5866900A27A6A /* LaunchScreen.storyboard */,
+				5418F3FE2BF8AB1C00A27A6A /* GoogleService-Info.plist */,
 				5418F3D72BF5866900A27A6A /* Info.plist */,
 			);
 			path = TodoList;
@@ -86,6 +109,7 @@
 		5418F3E12BF5875D00A27A6A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5418F3F32BF8A4CC00A27A6A /* Firebase */,
 				5418F3EC2BF5C0D800A27A6A /* SQLite */,
 				5418F3E22BF5876C00A27A6A /* MySQLTableViewController.swift */,
 				5418F3E42BF5877700A27A6A /* FirebaseTableViewController.swift */,
@@ -97,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				5418F3E72BF59C3000A27A6A /* TodoList.swift */,
-				5418F3EA2BF5B9DD00A27A6A /* SQLiteTodoList.swift */,
+				5418F3FA2BF8A9E200A27A6A /* FirebaseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,6 +129,8 @@
 		5418F3E92BF5B9CC00A27A6A /* VM */ = {
 			isa = PBXGroup;
 			children = (
+				5418F4082BF8ACD700A27A6A /* Firebase */,
+				5418F4072BF8ACCE00A27A6A /* SQLite */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -118,6 +144,34 @@
 				5418F3F12BF7119000A27A6A /* DetailSQLiteViewController.swift */,
 			);
 			path = SQLite;
+			sourceTree = "<group>";
+		};
+		5418F3F32BF8A4CC00A27A6A /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				5418F3F82BF8A57000A27A6A /* FireTableViewController.swift */,
+				5418F3FC2BF8AA0D00A27A6A /* Message.swift */,
+				5418F40B2BF8AF4500A27A6A /* FireTableViewCell.swift */,
+				5418F40F2BF8B67000A27A6A /* FireAddViewController.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		5418F4072BF8ACCE00A27A6A /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				5418F3EA2BF5B9DD00A27A6A /* SQLiteTodoList.swift */,
+			);
+			path = SQLite;
+			sourceTree = "<group>";
+		};
+		5418F4082BF8ACD700A27A6A /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				5418F4092BF8ACE300A27A6A /* QueryModel.swift */,
+				5418F40D2BF8B40100A27A6A /* insertModel.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +190,11 @@
 			dependencies = (
 			);
 			name = TodoList;
+			packageProductDependencies = (
+				5418F4012BF8AB6600A27A6A /* FirebaseAuth */,
+				5418F4032BF8AB6600A27A6A /* FirebaseFirestore */,
+				5418F4052BF8AB6600A27A6A /* FirebaseStorage */,
+			);
 			productName = TodoList;
 			productReference = 5418F3C62BF5866800A27A6A /* TodoList.app */;
 			productType = "com.apple.product-type.application";
@@ -164,6 +223,9 @@
 				Base,
 			);
 			mainGroup = 5418F3BD2BF5866800A27A6A;
+			packageReferences = (
+				5418F4002BF8AB6600A27A6A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 5418F3C72BF5866800A27A6A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -179,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5418F3D32BF5866900A27A6A /* Assets.xcassets in Resources */,
+				5418F3FF2BF8AB1C00A27A6A /* GoogleService-Info.plist in Resources */,
 				5418F3D62BF5866900A27A6A /* Base in Resources */,
 				5418F3D12BF5866800A27A6A /* Base in Resources */,
 			);
@@ -191,16 +254,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5418F40C2BF8AF4500A27A6A /* FireTableViewCell.swift in Sources */,
+				5418F3FB2BF8A9E200A27A6A /* FirebaseModel.swift in Sources */,
+				5418F40E2BF8B40100A27A6A /* insertModel.swift in Sources */,
 				5418F3F02BF603FD00A27A6A /* SQLiteTableViewCell.swift in Sources */,
 				5418F3EB2BF5B9DD00A27A6A /* SQLiteTodoList.swift in Sources */,
 				5418F3F22BF7119000A27A6A /* DetailSQLiteViewController.swift in Sources */,
+				5418F40A2BF8ACE300A27A6A /* QueryModel.swift in Sources */,
 				5418F3CA2BF5866800A27A6A /* AppDelegate.swift in Sources */,
 				5418F3EE2BF5C68D00A27A6A /* AddSQLiteViewController.swift in Sources */,
 				5418F3E02BF5875800A27A6A /* SQLiteTableViewController.swift in Sources */,
 				5418F3E52BF5877700A27A6A /* FirebaseTableViewController.swift in Sources */,
+				5418F4102BF8B67000A27A6A /* FireAddViewController.swift in Sources */,
 				5418F3E82BF59C3000A27A6A /* TodoList.swift in Sources */,
+				5418F3FD2BF8AA0D00A27A6A /* Message.swift in Sources */,
 				5418F3E32BF5876C00A27A6A /* MySQLTableViewController.swift in Sources */,
 				5418F3CC2BF5866800A27A6A /* SceneDelegate.swift in Sources */,
+				5418F3F92BF8A57000A27A6A /* FireTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +499,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5418F4002BF8AB6600A27A6A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.26.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5418F4012BF8AB6600A27A6A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5418F4002BF8AB6600A27A6A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		5418F4032BF8AB6600A27A6A /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5418F4002BF8AB6600A27A6A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		5418F4052BF8AB6600A27A6A /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5418F4002BF8AB6600A27A6A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5418F3BE2BF5866800A27A6A /* Project object */;
 }
