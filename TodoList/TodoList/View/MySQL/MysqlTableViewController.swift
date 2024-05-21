@@ -1,14 +1,18 @@
 //
-//  MySQLTableViewController.swift
+//  MysqlTableViewController.swift
 //  TodoList
 //
-//  Created by 신나라 on 5/16/24.
+//  Created by 신나라 on 5/21/24.
 //
 
 import UIKit
 
-class MySQLTableViewController: UITableViewController {
+class MysqlTableViewController: UITableViewController {
 
+    @IBOutlet var tvListView: UITableView!
+    
+    var dataArray: [FirebaseModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,28 +22,37 @@ class MySQLTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        readValues()
+    }
+    
+    func readValues() {
+        var mysqlQueryModel = MysqlQueryModel()
+        mysqlQueryModel.delegate = self
+        mysqlQueryModel.downloadItems()
+        tvListView.reloadData()
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return dataArray.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mysqlCell", for: indexPath)
 
         // Configure the cell...
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -86,4 +99,11 @@ class MySQLTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension MysqlTableViewController: MysqlModelProtocol {
+    func itemDownloaded(items: [FirebaseModel]) {
+        dataArray = items
+        tvListView.reloadData()
+    }
 }

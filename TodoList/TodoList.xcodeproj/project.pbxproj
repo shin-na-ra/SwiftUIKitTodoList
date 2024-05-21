@@ -13,7 +13,6 @@
 		5418F3D32BF5866900A27A6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5418F3D22BF5866900A27A6A /* Assets.xcassets */; };
 		5418F3D62BF5866900A27A6A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 5418F3D52BF5866900A27A6A /* Base */; };
 		5418F3E02BF5875800A27A6A /* SQLiteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3DF2BF5875800A27A6A /* SQLiteTableViewController.swift */; };
-		5418F3E32BF5876C00A27A6A /* MySQLTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3E22BF5876C00A27A6A /* MySQLTableViewController.swift */; };
 		5418F3E82BF59C3000A27A6A /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3E72BF59C3000A27A6A /* TodoList.swift */; };
 		5418F3EB2BF5B9DD00A27A6A /* SQLiteTodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3EA2BF5B9DD00A27A6A /* SQLiteTodoList.swift */; };
 		5418F3EE2BF5C68D00A27A6A /* AddSQLiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3ED2BF5C68D00A27A6A /* AddSQLiteViewController.swift */; };
@@ -33,6 +32,10 @@
 		54294CB72BFC1D1C0042E8DA /* FireDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CB62BFC1D1C0042E8DA /* FireDetailViewController.swift */; };
 		54294CB92BFC1EE20042E8DA /* updateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CB82BFC1EE20042E8DA /* updateModel.swift */; };
 		54294CBB2BFC1FD30042E8DA /* deleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CBA2BFC1FD30042E8DA /* deleteModel.swift */; };
+		54294CBF2BFC54880042E8DA /* TodoListDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CBE2BFC54880042E8DA /* TodoListDB.swift */; };
+		54294CC32BFC55D90042E8DA /* MysqlTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CC22BFC55D90042E8DA /* MysqlTableViewController.swift */; };
+		54294CC52BFC56470042E8DA /* QueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CC42BFC56470042E8DA /* QueryModel.swift */; };
+		54294CC72BFC7E9D0042E8DA /* MysqlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CC62BFC7E9D0042E8DA /* MysqlTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +47,6 @@
 		5418F3D52BF5866900A27A6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5418F3D72BF5866900A27A6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5418F3DF2BF5875800A27A6A /* SQLiteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteTableViewController.swift; sourceTree = "<group>"; };
-		5418F3E22BF5876C00A27A6A /* MySQLTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySQLTableViewController.swift; sourceTree = "<group>"; };
 		5418F3E72BF59C3000A27A6A /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		5418F3EA2BF5B9DD00A27A6A /* SQLiteTodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteTodoList.swift; sourceTree = "<group>"; };
 		5418F3ED2BF5C68D00A27A6A /* AddSQLiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSQLiteViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,10 @@
 		54294CB62BFC1D1C0042E8DA /* FireDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDetailViewController.swift; sourceTree = "<group>"; };
 		54294CB82BFC1EE20042E8DA /* updateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateModel.swift; sourceTree = "<group>"; };
 		54294CBA2BFC1FD30042E8DA /* deleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteModel.swift; sourceTree = "<group>"; };
+		54294CBE2BFC54880042E8DA /* TodoListDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListDB.swift; sourceTree = "<group>"; };
+		54294CC22BFC55D90042E8DA /* MysqlTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysqlTableViewController.swift; sourceTree = "<group>"; };
+		54294CC42BFC56470042E8DA /* QueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryModel.swift; sourceTree = "<group>"; };
+		54294CC62BFC7E9D0042E8DA /* MysqlTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysqlTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +119,9 @@
 		5418F3E12BF5875D00A27A6A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				54294CBC2BFC52BB0042E8DA /* MySQL */,
 				5418F3F32BF8A4CC00A27A6A /* Firebase */,
 				5418F3EC2BF5C0D800A27A6A /* SQLite */,
-				5418F3E22BF5876C00A27A6A /* MySQLTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +129,7 @@
 		5418F3E62BF59C1D00A27A6A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				54294CBE2BFC54880042E8DA /* TodoListDB.swift */,
 				5418F3E72BF59C3000A27A6A /* TodoList.swift */,
 				5418F3FA2BF8A9E200A27A6A /* FirebaseModel.swift */,
 			);
@@ -132,6 +139,7 @@
 		5418F3E92BF5B9CC00A27A6A /* VM */ = {
 			isa = PBXGroup;
 			children = (
+				54294CBD2BFC52C40042E8DA /* MySQL */,
 				5418F4082BF8ACD700A27A6A /* Firebase */,
 				5418F4072BF8ACCE00A27A6A /* SQLite */,
 			);
@@ -178,6 +186,23 @@
 				54294CBA2BFC1FD30042E8DA /* deleteModel.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		54294CBC2BFC52BB0042E8DA /* MySQL */ = {
+			isa = PBXGroup;
+			children = (
+				54294CC22BFC55D90042E8DA /* MysqlTableViewController.swift */,
+				54294CC62BFC7E9D0042E8DA /* MysqlTableViewCell.swift */,
+			);
+			path = MySQL;
+			sourceTree = "<group>";
+		};
+		54294CBD2BFC52C40042E8DA /* MySQL */ = {
+			isa = PBXGroup;
+			children = (
+				54294CC42BFC56470042E8DA /* QueryModel.swift */,
+			);
+			path = MySQL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,8 +291,11 @@
 				5418F40E2BF8B40100A27A6A /* insertModel.swift in Sources */,
 				5418F3F02BF603FD00A27A6A /* SQLiteTableViewCell.swift in Sources */,
 				5418F3EB2BF5B9DD00A27A6A /* SQLiteTodoList.swift in Sources */,
+				54294CC32BFC55D90042E8DA /* MysqlTableViewController.swift in Sources */,
 				54294CB72BFC1D1C0042E8DA /* FireDetailViewController.swift in Sources */,
+				54294CBF2BFC54880042E8DA /* TodoListDB.swift in Sources */,
 				5418F3F22BF7119000A27A6A /* DetailSQLiteViewController.swift in Sources */,
+				54294CC72BFC7E9D0042E8DA /* MysqlTableViewCell.swift in Sources */,
 				5418F40A2BF8ACE300A27A6A /* QueryModel.swift in Sources */,
 				5418F3CA2BF5866800A27A6A /* AppDelegate.swift in Sources */,
 				5418F3EE2BF5C68D00A27A6A /* AddSQLiteViewController.swift in Sources */,
@@ -276,7 +304,7 @@
 				5418F3E82BF59C3000A27A6A /* TodoList.swift in Sources */,
 				5418F3FD2BF8AA0D00A27A6A /* Message.swift in Sources */,
 				54294CBB2BFC1FD30042E8DA /* deleteModel.swift in Sources */,
-				5418F3E32BF5876C00A27A6A /* MySQLTableViewController.swift in Sources */,
+				54294CC52BFC56470042E8DA /* QueryModel.swift in Sources */,
 				5418F3CC2BF5866800A27A6A /* SceneDelegate.swift in Sources */,
 				5418F3F92BF8A57000A27A6A /* FireTableViewController.swift in Sources */,
 			);
