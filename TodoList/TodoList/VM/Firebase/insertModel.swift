@@ -18,17 +18,17 @@ struct insertModel {
         var result: Bool = true
         
         db.collection("todoLists").order(by: "seq", descending: true).limit(to: 1).getDocuments { (snapshot, error) in
-            if let error = error {
+            if error != nil {
                 print("ERROR")
             } else {
-//                var seq = 0
-//                if let document = snapshot?.documents.first {
-//                    seq = document.data()["seq"] as? Int ?? 0
-//                    seq += 1
-//                    print("seq : \(seq)")
-//                } else {
-//                    seq = 1
-//                }
+                var seq = 0
+                if let document = snapshot?.documents.first {
+                    seq = document.data()["seq"] as? Int ?? 0
+                    seq += 1
+                    print("seq : \(seq)")
+                } else {
+                    seq = 1
+                }
                 
                 print("dfdf")
                 
@@ -37,7 +37,7 @@ struct insertModel {
                     "insertdate" : insertdate,
                     "compledate" : compledate,
                     "status" : status,
-                    "seq" : 3,
+                    "seq" : seq,
                     "image" : image
                 ]) {error in
                     if error != nil {

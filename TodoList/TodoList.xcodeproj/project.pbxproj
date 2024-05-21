@@ -14,7 +14,6 @@
 		5418F3D62BF5866900A27A6A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 5418F3D52BF5866900A27A6A /* Base */; };
 		5418F3E02BF5875800A27A6A /* SQLiteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3DF2BF5875800A27A6A /* SQLiteTableViewController.swift */; };
 		5418F3E32BF5876C00A27A6A /* MySQLTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3E22BF5876C00A27A6A /* MySQLTableViewController.swift */; };
-		5418F3E52BF5877700A27A6A /* FirebaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3E42BF5877700A27A6A /* FirebaseTableViewController.swift */; };
 		5418F3E82BF59C3000A27A6A /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3E72BF59C3000A27A6A /* TodoList.swift */; };
 		5418F3EB2BF5B9DD00A27A6A /* SQLiteTodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3EA2BF5B9DD00A27A6A /* SQLiteTodoList.swift */; };
 		5418F3EE2BF5C68D00A27A6A /* AddSQLiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3ED2BF5C68D00A27A6A /* AddSQLiteViewController.swift */; };
@@ -23,7 +22,6 @@
 		5418F3F92BF8A57000A27A6A /* FireTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3F82BF8A57000A27A6A /* FireTableViewController.swift */; };
 		5418F3FB2BF8A9E200A27A6A /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3FA2BF8A9E200A27A6A /* FirebaseModel.swift */; };
 		5418F3FD2BF8AA0D00A27A6A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F3FC2BF8AA0D00A27A6A /* Message.swift */; };
-		5418F3FF2BF8AB1C00A27A6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5418F3FE2BF8AB1C00A27A6A /* GoogleService-Info.plist */; };
 		5418F4022BF8AB6600A27A6A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5418F4012BF8AB6600A27A6A /* FirebaseAuth */; };
 		5418F4042BF8AB6600A27A6A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5418F4032BF8AB6600A27A6A /* FirebaseFirestore */; };
 		5418F4062BF8AB6600A27A6A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5418F4052BF8AB6600A27A6A /* FirebaseStorage */; };
@@ -31,6 +29,10 @@
 		5418F40C2BF8AF4500A27A6A /* FireTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F40B2BF8AF4500A27A6A /* FireTableViewCell.swift */; };
 		5418F40E2BF8B40100A27A6A /* insertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F40D2BF8B40100A27A6A /* insertModel.swift */; };
 		5418F4102BF8B67000A27A6A /* FireAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5418F40F2BF8B67000A27A6A /* FireAddViewController.swift */; };
+		5418F4672BFACB5700A27A6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5418F4662BFACB5700A27A6A /* GoogleService-Info.plist */; };
+		54294CB72BFC1D1C0042E8DA /* FireDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CB62BFC1D1C0042E8DA /* FireDetailViewController.swift */; };
+		54294CB92BFC1EE20042E8DA /* updateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CB82BFC1EE20042E8DA /* updateModel.swift */; };
+		54294CBB2BFC1FD30042E8DA /* deleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CBA2BFC1FD30042E8DA /* deleteModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +45,6 @@
 		5418F3D72BF5866900A27A6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5418F3DF2BF5875800A27A6A /* SQLiteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteTableViewController.swift; sourceTree = "<group>"; };
 		5418F3E22BF5876C00A27A6A /* MySQLTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySQLTableViewController.swift; sourceTree = "<group>"; };
-		5418F3E42BF5877700A27A6A /* FirebaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTableViewController.swift; sourceTree = "<group>"; };
 		5418F3E72BF59C3000A27A6A /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		5418F3EA2BF5B9DD00A27A6A /* SQLiteTodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteTodoList.swift; sourceTree = "<group>"; };
 		5418F3ED2BF5C68D00A27A6A /* AddSQLiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSQLiteViewController.swift; sourceTree = "<group>"; };
@@ -52,11 +53,14 @@
 		5418F3F82BF8A57000A27A6A /* FireTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTableViewController.swift; sourceTree = "<group>"; };
 		5418F3FA2BF8A9E200A27A6A /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
 		5418F3FC2BF8AA0D00A27A6A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		5418F3FE2BF8AB1C00A27A6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5418F4092BF8ACE300A27A6A /* QueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryModel.swift; sourceTree = "<group>"; };
 		5418F40B2BF8AF4500A27A6A /* FireTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTableViewCell.swift; sourceTree = "<group>"; };
 		5418F40D2BF8B40100A27A6A /* insertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = insertModel.swift; sourceTree = "<group>"; };
 		5418F40F2BF8B67000A27A6A /* FireAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAddViewController.swift; sourceTree = "<group>"; };
+		5418F4662BFACB5700A27A6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		54294CB62BFC1D1C0042E8DA /* FireDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDetailViewController.swift; sourceTree = "<group>"; };
+		54294CB82BFC1EE20042E8DA /* updateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateModel.swift; sourceTree = "<group>"; };
+		54294CBA2BFC1FD30042E8DA /* deleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +102,9 @@
 				5418F3C92BF5866800A27A6A /* AppDelegate.swift */,
 				5418F3CB2BF5866800A27A6A /* SceneDelegate.swift */,
 				5418F3CF2BF5866800A27A6A /* Main.storyboard */,
+				5418F4662BFACB5700A27A6A /* GoogleService-Info.plist */,
 				5418F3D22BF5866900A27A6A /* Assets.xcassets */,
 				5418F3D42BF5866900A27A6A /* LaunchScreen.storyboard */,
-				5418F3FE2BF8AB1C00A27A6A /* GoogleService-Info.plist */,
 				5418F3D72BF5866900A27A6A /* Info.plist */,
 			);
 			path = TodoList;
@@ -112,7 +116,6 @@
 				5418F3F32BF8A4CC00A27A6A /* Firebase */,
 				5418F3EC2BF5C0D800A27A6A /* SQLite */,
 				5418F3E22BF5876C00A27A6A /* MySQLTableViewController.swift */,
-				5418F3E42BF5877700A27A6A /* FirebaseTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				5418F3FC2BF8AA0D00A27A6A /* Message.swift */,
 				5418F40B2BF8AF4500A27A6A /* FireTableViewCell.swift */,
 				5418F40F2BF8B67000A27A6A /* FireAddViewController.swift */,
+				54294CB62BFC1D1C0042E8DA /* FireDetailViewController.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -170,6 +174,8 @@
 			children = (
 				5418F4092BF8ACE300A27A6A /* QueryModel.swift */,
 				5418F40D2BF8B40100A27A6A /* insertModel.swift */,
+				54294CB82BFC1EE20042E8DA /* updateModel.swift */,
+				54294CBA2BFC1FD30042E8DA /* deleteModel.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -241,7 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5418F3D32BF5866900A27A6A /* Assets.xcassets in Resources */,
-				5418F3FF2BF8AB1C00A27A6A /* GoogleService-Info.plist in Resources */,
+				5418F4672BFACB5700A27A6A /* GoogleService-Info.plist in Resources */,
 				5418F3D62BF5866900A27A6A /* Base in Resources */,
 				5418F3D12BF5866800A27A6A /* Base in Resources */,
 			);
@@ -256,18 +262,20 @@
 			files = (
 				5418F40C2BF8AF4500A27A6A /* FireTableViewCell.swift in Sources */,
 				5418F3FB2BF8A9E200A27A6A /* FirebaseModel.swift in Sources */,
+				54294CB92BFC1EE20042E8DA /* updateModel.swift in Sources */,
 				5418F40E2BF8B40100A27A6A /* insertModel.swift in Sources */,
 				5418F3F02BF603FD00A27A6A /* SQLiteTableViewCell.swift in Sources */,
 				5418F3EB2BF5B9DD00A27A6A /* SQLiteTodoList.swift in Sources */,
+				54294CB72BFC1D1C0042E8DA /* FireDetailViewController.swift in Sources */,
 				5418F3F22BF7119000A27A6A /* DetailSQLiteViewController.swift in Sources */,
 				5418F40A2BF8ACE300A27A6A /* QueryModel.swift in Sources */,
 				5418F3CA2BF5866800A27A6A /* AppDelegate.swift in Sources */,
 				5418F3EE2BF5C68D00A27A6A /* AddSQLiteViewController.swift in Sources */,
 				5418F3E02BF5875800A27A6A /* SQLiteTableViewController.swift in Sources */,
-				5418F3E52BF5877700A27A6A /* FirebaseTableViewController.swift in Sources */,
 				5418F4102BF8B67000A27A6A /* FireAddViewController.swift in Sources */,
 				5418F3E82BF59C3000A27A6A /* TodoList.swift in Sources */,
 				5418F3FD2BF8AA0D00A27A6A /* Message.swift in Sources */,
+				54294CBB2BFC1FD30042E8DA /* deleteModel.swift in Sources */,
 				5418F3E32BF5876C00A27A6A /* MySQLTableViewController.swift in Sources */,
 				5418F3CC2BF5866800A27A6A /* SceneDelegate.swift in Sources */,
 				5418F3F92BF8A57000A27A6A /* FireTableViewController.swift in Sources */,

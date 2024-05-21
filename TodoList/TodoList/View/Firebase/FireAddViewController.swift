@@ -41,7 +41,7 @@ class FireAddViewController: UIViewController {
     }
     
     @IBAction func btnUpdate(_ sender: UIButton) {
-        
+            
         guard let todo = tfText.text else {return}
         var image = downURL
         print("imageURL >>>> \(image)")
@@ -58,12 +58,14 @@ class FireAddViewController: UIViewController {
             if result {
                 showAlert("알림", "입력이 되었습니다.", "확인")
             } else {
-                showAlert("알림", "입력에 문제가 생겼습니다..", "확인")
+                showAlert("알림", "입력에 문제가 생겼습니다.", "확인")
             }
         }
     }
     
-    func insertImage(name : String) {
+    func insertImage(todo : String) {
+        
+        print("dddd : todo  : \(todo)")
         
         let storageRef = Storage.storage().reference()
         
@@ -71,7 +73,7 @@ class FireAddViewController: UIViewController {
         // image -> jpg 줄인다.
         guard let imageData = image.jpegData(compressionQuality: 0.4) else{return}
         
-        let imageRef = storageRef.child("images/\(name).jpg") // file type 이 있어야함. !!
+        let imageRef = storageRef.child("images/\(todo).jpg") // file type 이 있어야함. !!
         
         // image meta data setting
         let metaData = StorageMetadata()
@@ -100,6 +102,7 @@ class FireAddViewController: UIViewController {
             print("----- Comleted to insert a image ")
             print("1")
         }
+        
     }
     
     func showAlert(_ title: String, _ content: String, _ actionValue:String) {
@@ -116,11 +119,12 @@ class FireAddViewController: UIViewController {
 
 extension FireAddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imgView.image = image
         }
-        
-        insertImage(name: tfText.text!)
+            
+        insertImage(todo: tfText.text!)
         dismiss(animated: true)
     }
 }
