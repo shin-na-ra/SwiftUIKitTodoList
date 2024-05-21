@@ -11,7 +11,7 @@ class MysqlTableViewController: UITableViewController {
 
     @IBOutlet var tvListView: UITableView!
     
-    var dataArray: [FirebaseModel] = []
+    var dataArray: [MySQLTodoList] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +47,30 @@ class MysqlTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "mysqlCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellMysql", for: indexPath)
+        
+        var content = cell.defaultContentConfiguration()
+        let url = "http://localhost:8080/Flutter/Images/swift/"
+        let image = "\(dataArray[indexPath.row].image)"
+        
+        let urlPath = url + image
+        print(urlPath)
+        
+        var urlImage: UIImage?
+        
+        DispatchQueue.global().async {
+            if let data = try?Data(contentsOf: URL(string: urlPath)!) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        content.image = image
+                        cell.contentConfiguration = content
+                    }
+                }
+            }
+        }
+        
+        content.text = dataArray[indexPath.row].todoList
+        cell.contentConfiguration = content
 
         // Configure the cell...
 
@@ -102,7 +125,7 @@ class MysqlTableViewController: UITableViewController {
 }
 
 extension MysqlTableViewController: MysqlModelProtocol {
-    func itemDownloaded(items: [FirebaseModel]) {
+    func itemDownloaded(items: [MySQLTodoList]) {
         dataArray = items
         tvListView.reloadData()
     }

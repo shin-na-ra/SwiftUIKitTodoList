@@ -32,10 +32,12 @@
 		54294CB72BFC1D1C0042E8DA /* FireDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CB62BFC1D1C0042E8DA /* FireDetailViewController.swift */; };
 		54294CB92BFC1EE20042E8DA /* updateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CB82BFC1EE20042E8DA /* updateModel.swift */; };
 		54294CBB2BFC1FD30042E8DA /* deleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CBA2BFC1FD30042E8DA /* deleteModel.swift */; };
-		54294CBF2BFC54880042E8DA /* TodoListDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CBE2BFC54880042E8DA /* TodoListDB.swift */; };
+		54294CBF2BFC54880042E8DA /* MySqlTodoListDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CBE2BFC54880042E8DA /* MySqlTodoListDB.swift */; };
 		54294CC32BFC55D90042E8DA /* MysqlTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CC22BFC55D90042E8DA /* MysqlTableViewController.swift */; };
-		54294CC52BFC56470042E8DA /* QueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CC42BFC56470042E8DA /* QueryModel.swift */; };
-		54294CC72BFC7E9D0042E8DA /* MysqlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CC62BFC7E9D0042E8DA /* MysqlTableViewCell.swift */; };
+		54294CC52BFC56470042E8DA /* MySqLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CC42BFC56470042E8DA /* MySqLModel.swift */; };
+		54294CC92BFC81500042E8DA /* MysqlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CC82BFC81500042E8DA /* MysqlTableViewCell.swift */; };
+		54B749512BFC9665003773E2 /* MySQLTodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B749502BFC9665003773E2 /* MySQLTodoList.swift */; };
+		54B749532BFC96FD003773E2 /* MysqlAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B749522BFC96FD003773E2 /* MysqlAddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,10 +65,12 @@
 		54294CB62BFC1D1C0042E8DA /* FireDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDetailViewController.swift; sourceTree = "<group>"; };
 		54294CB82BFC1EE20042E8DA /* updateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateModel.swift; sourceTree = "<group>"; };
 		54294CBA2BFC1FD30042E8DA /* deleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteModel.swift; sourceTree = "<group>"; };
-		54294CBE2BFC54880042E8DA /* TodoListDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListDB.swift; sourceTree = "<group>"; };
+		54294CBE2BFC54880042E8DA /* MySqlTodoListDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySqlTodoListDB.swift; sourceTree = "<group>"; };
 		54294CC22BFC55D90042E8DA /* MysqlTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysqlTableViewController.swift; sourceTree = "<group>"; };
-		54294CC42BFC56470042E8DA /* QueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryModel.swift; sourceTree = "<group>"; };
-		54294CC62BFC7E9D0042E8DA /* MysqlTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysqlTableViewCell.swift; sourceTree = "<group>"; };
+		54294CC42BFC56470042E8DA /* MySqLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySqLModel.swift; sourceTree = "<group>"; };
+		54294CC82BFC81500042E8DA /* MysqlTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysqlTableViewCell.swift; sourceTree = "<group>"; };
+		54B749502BFC9665003773E2 /* MySQLTodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySQLTodoList.swift; sourceTree = "<group>"; };
+		54B749522BFC96FD003773E2 /* MysqlAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysqlAddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,9 +133,10 @@
 		5418F3E62BF59C1D00A27A6A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				54294CBE2BFC54880042E8DA /* TodoListDB.swift */,
+				54294CBE2BFC54880042E8DA /* MySqlTodoListDB.swift */,
 				5418F3E72BF59C3000A27A6A /* TodoList.swift */,
 				5418F3FA2BF8A9E200A27A6A /* FirebaseModel.swift */,
+				54B749502BFC9665003773E2 /* MySQLTodoList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,7 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				54294CC22BFC55D90042E8DA /* MysqlTableViewController.swift */,
-				54294CC62BFC7E9D0042E8DA /* MysqlTableViewCell.swift */,
+				54294CC82BFC81500042E8DA /* MysqlTableViewCell.swift */,
+				54B749522BFC96FD003773E2 /* MysqlAddViewController.swift */,
 			);
 			path = MySQL;
 			sourceTree = "<group>";
@@ -200,7 +206,7 @@
 		54294CBD2BFC52C40042E8DA /* MySQL */ = {
 			isa = PBXGroup;
 			children = (
-				54294CC42BFC56470042E8DA /* QueryModel.swift */,
+				54294CC42BFC56470042E8DA /* MySqLModel.swift */,
 			);
 			path = MySQL;
 			sourceTree = "<group>";
@@ -288,14 +294,15 @@
 				5418F40C2BF8AF4500A27A6A /* FireTableViewCell.swift in Sources */,
 				5418F3FB2BF8A9E200A27A6A /* FirebaseModel.swift in Sources */,
 				54294CB92BFC1EE20042E8DA /* updateModel.swift in Sources */,
+				54B749512BFC9665003773E2 /* MySQLTodoList.swift in Sources */,
 				5418F40E2BF8B40100A27A6A /* insertModel.swift in Sources */,
 				5418F3F02BF603FD00A27A6A /* SQLiteTableViewCell.swift in Sources */,
 				5418F3EB2BF5B9DD00A27A6A /* SQLiteTodoList.swift in Sources */,
 				54294CC32BFC55D90042E8DA /* MysqlTableViewController.swift in Sources */,
 				54294CB72BFC1D1C0042E8DA /* FireDetailViewController.swift in Sources */,
-				54294CBF2BFC54880042E8DA /* TodoListDB.swift in Sources */,
+				54294CBF2BFC54880042E8DA /* MySqlTodoListDB.swift in Sources */,
 				5418F3F22BF7119000A27A6A /* DetailSQLiteViewController.swift in Sources */,
-				54294CC72BFC7E9D0042E8DA /* MysqlTableViewCell.swift in Sources */,
+				54294CC92BFC81500042E8DA /* MysqlTableViewCell.swift in Sources */,
 				5418F40A2BF8ACE300A27A6A /* QueryModel.swift in Sources */,
 				5418F3CA2BF5866800A27A6A /* AppDelegate.swift in Sources */,
 				5418F3EE2BF5C68D00A27A6A /* AddSQLiteViewController.swift in Sources */,
@@ -304,7 +311,8 @@
 				5418F3E82BF59C3000A27A6A /* TodoList.swift in Sources */,
 				5418F3FD2BF8AA0D00A27A6A /* Message.swift in Sources */,
 				54294CBB2BFC1FD30042E8DA /* deleteModel.swift in Sources */,
-				54294CC52BFC56470042E8DA /* QueryModel.swift in Sources */,
+				54294CC52BFC56470042E8DA /* MySqLModel.swift in Sources */,
+				54B749532BFC96FD003773E2 /* MysqlAddViewController.swift in Sources */,
 				5418F3CC2BF5866800A27A6A /* SceneDelegate.swift in Sources */,
 				5418F3F92BF8A57000A27A6A /* FireTableViewController.swift in Sources */,
 			);
