@@ -1,5 +1,5 @@
 //
-//  MysqlAddViewController.swift
+//  MysqlDetailViewController.swift
 //  TodoList
 //
 //  Created by 신나라 on 5/21/24.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-class MysqlAddViewController: UIViewController {
+class MysqlDetailViewController: UIViewController {
 
+    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var tfText: UITextField!
-    @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var imgView: UIImageView!
     
     var imgArr = [
@@ -19,8 +19,13 @@ class MysqlAddViewController: UIViewController {
         ("http://localhost:8080/Flutter/Images/swift/pencil.png", "pencil.png", "연필")
     ]
     
+    var imageValue = ""
+    var textValue = ""
+    var imageFile = "http://localhost:8080/Flutter/Images/swift/"
+    var idValue = 0
+    
     var fileName = ""
-    var count = 0
+    var count = 4
     var checkValue = ""
     
     var imageArray: [UIImage?] = []
@@ -28,11 +33,29 @@ class MysqlAddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tfText.text = textValue
+        imageFile += imageValue
+        
+        guard let url = URL(string: imageFile) else {return}
+        
+        Task {
+            do{
+                let data = try await loadData(from: url)
+                imgView.image = UIImage(data: data)
+            } catch let error {
+                print("Error: \(error)")
+            }
+        }
+        
         downloadImages()
         
-        picker.dataSource = self
-        picker.delegate = self
-        // Do any additional setup after loading the view.
+        pickerView.dataSource = self
+        pickerView.delegate = self
+    }
+    
+    func loadData(from url: URL) async throws -> Data {
+        let (data, _) = try await URLSession.shared.data(from: url)
+        return data
     }
     
     func downloadImages() {
@@ -41,7 +64,7 @@ class MysqlAddViewController: UIViewController {
             if self.imageArray.count == self.imgArr.count {
                 // 생성되었다면 타이머를 중지하고 피커 뷰를 새로 고침
                 timer.invalidate()
-                self.picker.reloadAllComponents()
+                self.pickerView.reloadAllComponents()
             }
         }
         
@@ -57,7 +80,7 @@ class MysqlAddViewController: UIViewController {
                     }
                     
                     if self.imageArray.count == self.imgArr.count {
-                        self.picker.reloadAllComponents()
+                        self.pickerView.reloadAllComponents()
                     }
                 }
             }
@@ -77,36 +100,6 @@ class MysqlAddViewController: UIViewController {
     }
     
     
-    @IBAction func btnAdd(_ sender: UIButton) {
-        if tfText.text!.isEmpty {
-            let textAlert = UIAlertController(title: "경고", message: "데이터를 입력하세요", preferredStyle: .alert)
-            let actionDefault = UIAlertAction(title: "확인", style: .default)
-            textAlert.addAction(actionDefault)
-            present(textAlert, animated: true)
-        } else {
-            
-            var mysqlQueryModel = MysqlQueryModel()
-            guard let todo = tfText.text else {return}
-            
-            let currentDate = Date()
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd"
-            let dateString = formatter.string(from: currentDate)
-            let dateSubstring = String(dateString.prefix(10))
-            
-            print("dfdf : \(dateSubstring)")
-            var result = mysqlQueryModel.insertQuery(image: imgArr[count].1, insertdate: dateSubstring, status: 0, todo: todo)
-                print("result \(result)")
-            if result {
-                showAlert("알림", "입력되었습니다.", "확인")
-            } else {
-                showAlert("알림", "입력에 문제가 생겼습니다.", "확인")
-            }
-        }
-        
-        navigationController?.popViewController(animated: true)
-    }
-    
     func showAlert(_ title: String, _ content: String, _ actionValue:String) {
         let resultAlert = UIAlertController(title: title, message: content, preferredStyle: .alert)
         let onAction = UIAlertAction(title: actionValue, style: .default, handler: {ACTION in
@@ -116,9 +109,36 @@ class MysqlAddViewController: UIViewController {
         resultAlert.addAction(onAction)
         self.present(resultAlert, animated: true)
     }
+    
+    
+    @IBAction func btnUpdate(_ sender: UIButton) {
+        
+        var privateImageValue = ""
+        if count == 4 {
+            privateImageValue = imageValue
+        } else {
+            privateImageValue =  imgArr[count].1
+        }
+        
+        print("privateImageValue : \(privateImageValue)")
+        
+        guard let todo = tfText.text else {return}
+        
+        let mysqlQueryModel = MysqlQueryModel()
+        let result = mysqlQueryModel.updateQuery(image: privateImageValue, todo: todo, id: idValue)
+        
+        if result {
+            showAlert("알림", "수정되었습니다.", "확인")
+        } else {
+            showAlert("알림", "수정에 문제가 생겼습니다.", "확인")
+        }
+    }
+
 }
 
-extension MysqlAddViewController: UIPickerViewDataSource {
+
+
+extension MysqlDetailViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -128,20 +148,22 @@ extension MysqlAddViewController: UIPickerViewDataSource {
     }
 }
 
-extension MysqlAddViewController: UIPickerViewDelegate {
-//    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-//        let imageView = UIImageView(image: imageArray[row])
-//        imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-//
-//        return imageView
-//    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return imgArr[row].2
+extension MysqlDetailViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        // 이미지 배열이 비어 있는지 확인
+        guard row < imageArray.count else {
+            // 배열이 비어 있거나 유효한 인덱스를 가지고 있지 않으면 기본 뷰를 반환
+            return UIView()
+        }
+        
+        let imageView = UIImageView(image: imageArray[row])
+        imageView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        return imageView
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         imgView.image = imageArray[row]
         count = row
+        print("count : \(count)")
     }
 }

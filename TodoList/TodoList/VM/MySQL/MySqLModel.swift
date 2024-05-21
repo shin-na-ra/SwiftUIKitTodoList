@@ -49,13 +49,6 @@ struct MysqlQueryModel {
     //insert
     func insertQuery(image: String, insertdate: String, status: Int, todo: String) -> Bool {
         
-        print("ddd ------------ ")
-        print(image)
-        print(insertdate)
-        print(status)
-        print(todo)
-        print("ddd ------------ ")
-        
         var result = true
         var content = "?image=\(image)&insertdate=\(insertdate)&status=\(status)&todo=\(todo)"
         
@@ -70,9 +63,7 @@ struct MysqlQueryModel {
         DispatchQueue.global().async {
             do {
                 _ = try Data(contentsOf: url)
-                print("실행2")
                 DispatchQueue.main.async {
-                    print("실행3")
                     result = true
                 }
             } catch let error{
@@ -83,4 +74,64 @@ struct MysqlQueryModel {
         
         return result
     }
+    
+    
+    //update
+    func updateQuery(image: String, todo: String, id: Int) -> Bool {
+        
+        var result = true
+        var content = "?image=\(image)&todo=\(todo)&id=\(id)"
+        
+        var urlPath = "http://localhost:8080/Flutter/JSP/todoList/todoUpdate.jsp"
+        urlPath += content
+        
+        print("urlPath >>>>>>>> \(urlPath)")
+        
+        urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let url: URL = URL(string: urlPath)!
+        
+        DispatchQueue.global().async {
+            do {
+                _ = try Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    result = true
+                }
+            } catch let error{
+                print("error >>>>>>> \(error)")
+                result = false
+            }
+        }
+        
+        return result
+    }
+    
+    //delete
+    func deleteQuery(id: Int) -> Bool {
+        
+        var result = true
+        var content = "?id=\(id)"
+        
+        var urlPath = "http://localhost:8080/Flutter/JSP/todoList/todoDelete.jsp"
+        urlPath += content
+        
+        urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let url: URL = URL(string: urlPath)!
+        print("rurl r >>> : ",url)
+        
+        DispatchQueue.global().async {
+            do {
+                _ = try Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    result = true
+                }
+            } catch let error{
+                print("error >>>>>>> \(error)")
+                result = false
+            }
+        }
+        
+        return result
+    }
+    
+    
 }

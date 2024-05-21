@@ -38,6 +38,7 @@
 		54294CC92BFC81500042E8DA /* MysqlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54294CC82BFC81500042E8DA /* MysqlTableViewCell.swift */; };
 		54B749512BFC9665003773E2 /* MySQLTodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B749502BFC9665003773E2 /* MySQLTodoList.swift */; };
 		54B749532BFC96FD003773E2 /* MysqlAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B749522BFC96FD003773E2 /* MysqlAddViewController.swift */; };
+		54B749552BFCEC92003773E2 /* MysqlDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B749542BFCEC92003773E2 /* MysqlDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		54294CC82BFC81500042E8DA /* MysqlTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysqlTableViewCell.swift; sourceTree = "<group>"; };
 		54B749502BFC9665003773E2 /* MySQLTodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySQLTodoList.swift; sourceTree = "<group>"; };
 		54B749522BFC96FD003773E2 /* MysqlAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysqlAddViewController.swift; sourceTree = "<group>"; };
+		54B749542BFCEC92003773E2 /* MysqlDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysqlDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 				54294CC22BFC55D90042E8DA /* MysqlTableViewController.swift */,
 				54294CC82BFC81500042E8DA /* MysqlTableViewCell.swift */,
 				54B749522BFC96FD003773E2 /* MysqlAddViewController.swift */,
+				54B749542BFCEC92003773E2 /* MysqlDetailViewController.swift */,
 			);
 			path = MySQL;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				54294CB92BFC1EE20042E8DA /* updateModel.swift in Sources */,
 				54B749512BFC9665003773E2 /* MySQLTodoList.swift in Sources */,
 				5418F40E2BF8B40100A27A6A /* insertModel.swift in Sources */,
+				54B749552BFCEC92003773E2 /* MysqlDetailViewController.swift in Sources */,
 				5418F3F02BF603FD00A27A6A /* SQLiteTableViewCell.swift in Sources */,
 				5418F3EB2BF5B9DD00A27A6A /* SQLiteTodoList.swift in Sources */,
 				54294CC32BFC55D90042E8DA /* MysqlTableViewController.swift in Sources */,

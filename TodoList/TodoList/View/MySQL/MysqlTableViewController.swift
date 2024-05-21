@@ -20,7 +20,7 @@ class MysqlTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+         self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +54,6 @@ class MysqlTableViewController: UITableViewController {
         let image = "\(dataArray[indexPath.row].image)"
         
         let urlPath = url + image
-        print(urlPath)
         
         var urlImage: UIImage?
         
@@ -72,8 +71,6 @@ class MysqlTableViewController: UITableViewController {
         content.text = dataArray[indexPath.row].todoList
         cell.contentConfiguration = content
 
-        // Configure the cell...
-
         return cell
     }
 
@@ -85,17 +82,37 @@ class MysqlTableViewController: UITableViewController {
     }
     */
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            
+            let mysqlQueryModel = MysqlQueryModel()
+            print("id : \(dataArray[indexPath.row].id)")
+            let result = mysqlQueryModel.deleteQuery(id: dataArray[indexPath.row].id)
+            
+            if result {
+                showAlert("알림", "삭제되었습니다.", "확인")
+                dataArray.remove(at: indexPath.row)
+            } else {
+                showAlert("알림", "삭제에 문제가 생겼습니다.", "확인")
+            }
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
+    func showAlert(_ title: String, _ content: String, _ actionValue:String) {
+        let resultAlert = UIAlertController(title: title, message: content, preferredStyle: .alert)
+        let onAction = UIAlertAction(title: actionValue, style: .default, handler: {ACTION in
+            
+            self.navigationController?.popViewController(animated: true)
+        })
+        resultAlert.addAction(onAction)
+        self.present(resultAlert, animated: true)
+    }
+    
 
     /*
     // Override to support rearranging the table view.
@@ -112,15 +129,24 @@ class MysqlTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "myDetail" {
+            let detailController = segue.destination as! MysqlDetailViewController
+            
+            let cell = sender as! UITableViewCell
+            let indexPath = tvListView.indexPath(for: cell)
+            
+            detailController.textValue = dataArray[indexPath!.row].todoList
+            detailController.imageValue = dataArray[indexPath!.row].image
+            detailController.idValue = dataArray[indexPath!.row].id
+        }
     }
-    */
 
 }
 
